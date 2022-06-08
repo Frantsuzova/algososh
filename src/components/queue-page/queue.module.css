@@ -1,0 +1,28 @@
+.conteiner {
+    margin: 0 auto;
+    max-width: 829px;
+}
+
+.mainbox {
+    display: flex;
+    gap: 12px;
+}
+
+.input {
+    max-width: 377px;
+}
+
+.deletebutton {
+    margin-right: 68px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 40px;
+    list-style-type: none;
+    margin-top: 52px;
+    padding: 0;
+  }
