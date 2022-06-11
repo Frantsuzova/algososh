@@ -6,3 +6,8 @@ export type TChar = {
     char?: string;
     state: ElementStates;
 };
+
+export interface IColumn {
+    number: number;
+    state: ElementStates;
+}

@@ -1,10 +1,17 @@
 import { TChar } from '../types/types';
+import { ElementStates } from "../types/element-states";
 
-export const randomNumber = (min: number, max: number): number => {
-    const offset = min;
-    const range = (max - min) + 1;
-    return Math.floor(Math.random() * range) + offset;
-}
+export const randomArray = (min: number, max: number, maxelement: number) => {
+    const length = Math.floor(Math.random() * (max - min) + min);
+    let arr = [];
+    for (let i = 0; i <= length; i++) {
+        arr.push({
+            number: Math.floor(Math.random() * (maxelement + 1)),
+            state: ElementStates.Default,
+        });
+    }
+    return arr;
+};
 
 export const getFibArray = (n: number): number[] => {
     let arr: number[] = [0, 1];

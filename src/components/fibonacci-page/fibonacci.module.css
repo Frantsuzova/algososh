@@ -17,7 +17,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
-    padding: 120px 0 0;
-    margin: 0;
-    list-style-type: none;
+    row-gap: 48px;
+    max-width: 944px;
+    padding: 48px 0 0;
+    margin: 0 auto;
 }
