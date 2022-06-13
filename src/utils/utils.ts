@@ -3,7 +3,7 @@ import { ElementStates } from "../types/element-states";
 
 export const randomArray = (min: number, max: number, maxelement: number) => {
     const length = Math.floor(Math.random() * (max - min) + min);
-    let arr = [];
+    const arr = [];
     for (let i = 0; i <= length; i++) {
         arr.push({
             number: Math.floor(Math.random() * (maxelement + 1)),
@@ -14,7 +14,7 @@ export const randomArray = (min: number, max: number, maxelement: number) => {
 };
 
 export const getFibArray = (n: number): number[] => {
-    let arr: number[] = [0, 1];
+    const arr: number[] = [0, 1];
     for (let i = 2; i <= n + 1; i++) {
         arr.push(arr[i - 2] + arr[i - 1]);
     }
