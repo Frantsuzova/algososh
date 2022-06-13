@@ -5,6 +5,7 @@ import { Button } from '../../components/ui/button/button';
 import { Stack } from "./stack";
 import { Circle } from '../../components/ui/circle/circle';
 import styles from './stack.module.css';
+import { ElementStates } from "../../types/element-states";
 import { sleep } from '../../utils/utils';
 
 const stack = new Stack<number | string>();
@@ -15,6 +16,15 @@ const findHead = (currentCount: number, index: number,) => {
   }
 }
 
+const setColor = (currentCount: number, index: number, deleteStatus: boolean, isChange:boolean) => {
+  if ((findHead(currentCount, index,) === 'top' && isChange) && !deleteStatus) {
+    return ElementStates.Changing
+  } else if ((findHead(currentCount, index - 1,) === 'top' && isChange) && deleteStatus) {
+    return ElementStates.Changing
+  }
+  return ElementStates.Default
+}
+
 export const StackPage: React.FC = () => {
 
   const [value, setValue] = React.useState('');
@@ -23,6 +33,8 @@ export const StackPage: React.FC = () => {
   const [addStatus, setAddStatus] = React.useState<boolean>();
   const [deleteStatus, setDeleteStatus] = React.useState<boolean>();
   const [inProcess, setProcess] = React.useState<boolean>();
+  const [isChange, setChangeStatus] = React.useState<boolean>();
+
 
   return (
     <SolutionLayout title="Стек">
@@ -38,7 +50,7 @@ export const StackPage: React.FC = () => {
             isLoader={addStatus}
             text='Добавить'
             onClick={() => {
-              stack.push(value, setElements, sleep, 1000, setAddStatus, setProcess, setValue);
+              stack.push(value, setElements, setChangeStatus, sleep, 1000, setAddStatus, setProcess, setValue);
               setCurrentCount(currentCount + 1); setAddStatus(true)
             }} />
           <Button
@@ -47,7 +59,7 @@ export const StackPage: React.FC = () => {
             text='Удалить'
             extraClass={styles.deletebutton}
             onClick={() => {
-              stack.pop(setElements, sleep, 1000, setDeleteStatus, setProcess); setCurrentCount(currentCount - 1);
+              stack.pop(setElements, setChangeStatus, sleep, 1000, setDeleteStatus, setProcess); setCurrentCount(currentCount - 1);
               setDeleteStatus(true)
             }} />
           <Button
@@ -65,7 +77,9 @@ export const StackPage: React.FC = () => {
             key={idx}
             letter={`${char}`}
             head={!deleteStatus ? findHead(currentCount, idx) : findHead(currentCount, idx - 1)}
+            state={setColor(currentCount, idx,deleteStatus!,isChange!)}
             index={idx} />;
+
         })}
       </ul>
     </SolutionLayout>

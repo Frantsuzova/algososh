@@ -34,3 +34,11 @@
     margin-top: 120px;
     padding: 0;
 }
+
+.ellist  {
+    display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+
+}
