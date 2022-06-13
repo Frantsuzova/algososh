@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { Input } from '../../components/ui/input/input';
 import { Button } from '../../components/ui/button/button';
@@ -6,7 +6,6 @@ import { Stack } from "./stack";
 import { Circle } from '../../components/ui/circle/circle';
 import styles from './stack.module.css';
 import { ElementStates } from "../../types/element-states";
-import { sleep } from '../../utils/utils';
 
 const stack = new Stack<number | string>();
 
@@ -50,7 +49,8 @@ export const StackPage: React.FC = () => {
             isLoader={addStatus}
             text='Добавить'
             onClick={() => {
-              stack.push(value, setElements, setChangeStatus, sleep, 1000, setAddStatus, setProcess, setValue);
+              stack.push(value, setElements, setChangeStatus, setAddStatus, setProcess, setValue);
+
               setCurrentCount(currentCount + 1); setAddStatus(true)
             }} />
           <Button
@@ -59,7 +59,8 @@ export const StackPage: React.FC = () => {
             text='Удалить'
             extraClass={styles.deletebutton}
             onClick={() => {
-              stack.pop(setElements, setChangeStatus, sleep, 1000, setDeleteStatus, setProcess); setCurrentCount(currentCount - 1);
+              stack.pop(setElements, setChangeStatus, setDeleteStatus, setProcess); setCurrentCount(currentCount - 1);
+
               setDeleteStatus(true)
             }} />
           <Button

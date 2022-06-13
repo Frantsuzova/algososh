@@ -37,8 +37,18 @@
 
 .ellist  {
     display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
+    align-items: center;
+    gap: 16px;
+    position: relative;
 
+}
+.firstcirlce {
+    position: absolute;
+    top: -62px;
+    left: 11px;
+}
+.secondcircle {
+    position: absolute;
+    top: 120px;
+    left: 11px;
 }

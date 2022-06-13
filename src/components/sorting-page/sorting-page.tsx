@@ -1,11 +1,10 @@
-import React, { Dispatch, useState, useEffect, SetStateAction } from "react";
+import React, { Dispatch, useState, SetStateAction } from "react";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { RadioInput } from "../ui/radio-input/radio-input";
 import { Button } from "../ui/button/button";
 import styles from './sorting.module.css';
 import { Column } from "../ui/column/column";
 import { sleep, randomArray, swapElements } from '../../utils/utils';
-import { IColumn } from "../../types/types";
 import { ElementStates } from "../../types/element-states";
 import { Direction } from "../../types/direction";
 
@@ -14,6 +13,11 @@ type TSortingState = {
   isDescending: boolean;
   isAscending: boolean;
 };
+
+interface IColumn {
+  number: number;
+  state: ElementStates;
+}
 
 
 export const SortingPage: React.FC = () => {

@@ -357,7 +357,7 @@ export const ListPage: React.FC = () => {
                   isSmall={true}
                   state={ElementStates.Changing}
                   letter={char.extraCircle?.char}
-                  extraClass={styles.topCirlce}
+                  extraClass={styles.firstcirlce}
                 />
               )}
               {char.deleting && (
@@ -365,7 +365,7 @@ export const ListPage: React.FC = () => {
                   isSmall={true}
                   state={ElementStates.Changing}
                   letter={char.extraCircle?.char}
-                  extraClass={styles.buttomCircle}
+                  extraClass={styles.secondcircle}
                 />
               )}
             </li>

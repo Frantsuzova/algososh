@@ -7,11 +7,6 @@ export type TChar = {
     state: ElementStates;
 };
 
-export interface IColumn {
-    number: number;
-    state: ElementStates;
-}
-
 export interface ICircleElement {
     adding?: boolean;
     deleting?: boolean;
