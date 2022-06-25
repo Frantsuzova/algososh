@@ -1,0 +1,35 @@
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 980px;
+    margin: auto;
+    justify-content: space-between;
+    padding-bottom: 48px;
+}
+.radiobox {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.buttonbox {
+    display: flex;
+    flex-direction: row;
+    max-width: 707px;
+    width: 100%;
+    justify-content: start;
+}
+
+.columnList {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-start;
+    column-gap: 16px;
+    row-gap: 48px;
+    width: 944px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+  }
