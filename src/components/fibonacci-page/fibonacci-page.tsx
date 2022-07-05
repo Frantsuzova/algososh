@@ -8,11 +8,11 @@ import { getFibArray } from '../../utils/utils';
 import { sleep } from '../../utils/utils';
 
 
+
 export const FibonacciPage: React.FC = () => {
   const [inputValue, setInputValue] = useState<any>();
   const [numbersArr, setNumbersArr] = useState<number[]>([]);
   const [inProgress, setInProgress] = useState(false);
-
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputValue(
       Number(e.currentTarget.value.replace(/[^0-9]/g, ''))
@@ -64,7 +64,7 @@ export const FibonacciPage: React.FC = () => {
       </div>
       <ul className={styles.list}>
         {numbersArr.map((num, idx) => {
-          return <Circle letter={num.toString()} key={idx} index={idx} />;
+          return <Circle letter={num.toString()} key={idx} index={idx} extraClass={styles.item} />;
         })}
       </ul>
     </SolutionLayout>
